@@ -16,7 +16,7 @@
       <td align="center" width="50%">
         <strong>🔗 Desktop & Web Access</strong><br/><br/>
         <a href="https://veltroweb.netlify.app" target="_blank">
-          <img src="https://img.shields.io/badge/Live_Demo-Visit_Website-gold?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo" />
+          <img src="https://img.shields.io/badge/Live_Demo-Visit_Website-C5A880?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo" />
         </a>
         <br/><br/>
         <a href="https://veltroweb.netlify.app">veltroweb.netlify.app</a>
@@ -32,12 +32,12 @@
 
   ---
 
-  <!-- Tech Badges -->
+  <!-- Themed Tech Badges -->
   <p>
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-    <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" alt="GSAP" />
+    <img src="https://img.shields.io/badge/HTML5-000000?style=for-the-badge&logo=html5&logoColor=D4AF37" alt="HTML5" />
+    <img src="https://img.shields.io/badge/CSS3-1A1A1A?style=for-the-badge&logo=css3&logoColor=D4AF37" alt="CSS3" />
+    <img src="https://img.shields.io/badge/JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=D4AF37" alt="JavaScript" />
+    <img src="https://img.shields.io/badge/GSAP-1A1A1A?style=for-the-badge&logo=greensock&logoColor=C5A880" alt="GSAP" />
   </p>
   
   <p>
