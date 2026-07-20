@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Squelette Rose — VELTRO Luxury Timepieces</title>
+<meta name="description" content="Openworked rose-gold movement, alligator strap, hand-finished bridges." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+/* Specific styles for product page */
+.product-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.product-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.product-hero__bg img,
+.product-hero__bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.product-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(17,17,17,0.7) 60%, #111 100%);
+}
+.product-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 80px;
+}
+.product-hero__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  color: #fff;
+}
+.product-hero__details h1 {
+  color: #fff;
+}
+.product-hero__price {
+  font-family: var(--sans);
+  color: #fff;
+  opacity: 0.8;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+.product-hero__desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+  @media (max-width: 900px) {
+    .product-hero__overlay {
+      background: linear-gradient(0deg, #111 0%, rgba(17,17,17,0.8) 50%, transparent 100%);
+    }
+    .product-hero__content {
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 80px;
+      height: 100vh;
+    }
+  }
+
+  /* Configure Section Styles */
+  .configure-section {
+    background: #0f0f11;
+    color: #fff;
+    padding: 120px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+  }
+  .configure-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .configure-wrap {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+  }
+  .configure-content .h-display {
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  .configure-content .lede {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    max-width: 90%;
+  }
+  .config-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 32px;
+  }
+  .config-group {
+    margin-bottom: 24px;
+  }
+  .config-group:last-child {
+    margin-bottom: 0;
+  }
+  .config-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .config-options {
+    display: flex;
+    gap: 16px;
+  }
+  .color-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+  }
+  .color-btn:hover {
+    transform: scale(1.05);
+  }
+  .color-btn.active {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+  }
+  .strap-btn {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .strap-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+  }
+  .strap-btn.active {
+    background: #fff;
+    color: #111;
+    border-color: #fff;
+    font-weight: 500;
+  }
+  .configure-image {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .configure-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 1s ease-out;
+  }
+  .configure-image:hover img {
+    transform: scale(1.05);
+  }
+  .add-to-cart-wrapper {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .btn--white {
+    background: #fff;
+    color: #111;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
+  }
+  .btn--white:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+  }
+
+  /* Feature Rows */
+  .feature-row {
+    display: flex;
+    flex-direction: row;
+    background: #FAFAFA;
+  }
+  .feature-row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .feature-row__media {
+    flex: 1;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+  .feature-row__media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .feature-row__content {
+    flex: 1;
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FAFAFA;
+  }
+  .feature-row__content h3 {
+    font-family: var(--sans);
+    font-size: 19px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c94040;
+    margin-bottom: 24px;
+  }
+  .feature-row__content p {
+    color: #444;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  @media (max-width: 900px) {
+    .feature-row, .feature-row:nth-child(even) {
+      flex-direction: column;
+    }
+    .feature-row__media {
+      min-height: 350px;
+    }
+    .feature-row__content {
+      padding: 60px 32px;
+    }
+  }
+  
+  /* Cinematic Scroll Sequence */
+  .cinematic-sequence {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #0f0f11;
+  }
+  .cinematic-panel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .cinematic-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center;
+    will-change: transform;
+    filter: brightness(0.9);
+  }
+  .showcase-1 {
+    z-index: 1;
+  }
+  .showcase-2 {
+    z-index: 2;
+    transform: translateY(100%);
+  }
+
+  /* Collection Grid */
+  .collection-grid-section {
+    padding: 100px 0;
+    background: #FAFAFA;
+  }
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .product-card {
+    background: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .product-card__media {
+    position: relative;
+    background: #000;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+  .product-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .product-card:hover .product-card__media img {
+    transform: scale(1.05);
+  }
+  /* Prevent image fading when wrapped in links */
+  .product-card a:hover img,
+  a:hover .product-card__media img {
+    opacity: 1 !important;
+  }
+  .product-card__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    border: 1px solid rgba(255,255,255,0.7);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .product-card__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .product-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .product-card__title {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: #111;
+  }
+  .product-card__price {
+    font-size: 13px;
+    color: #d92525;
+  }
+  .product-card__desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .btn--dark {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    border: none;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .btn--dark:hover {
+    background: #333;
+  }
+  @media (max-width: 1024px) {
+    .collection-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .collection-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="brand">
+      <span class="brand__word">VELTRO</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html#collection">Collection</a>
+      <a href="index.html#straps">Straps</a>
+      <a href="index.html#featured-collection">Featured</a>
+      <a href="index.html#gallery">Lifestyle</a>
+      <a href="index.html#news">Journal</a>
+    </nav>
+    <div class="nav__right">
+      <a href="index.html#collection" class="btn btn--ghost btn--sm">Boutique</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="product-hero">
+  <div class="product-hero__bg">
+    <video src="images/watermark-removed-Create_a_cinematic_high_en (1).mp4" autoplay loop muted playsinline></video>
+    <div class="product-hero__overlay"></div>
+  </div>
+  <div class="wrap product-hero__content"></div>
+  <a href="#product-details" class="scroll">
+    <span>Scroll</span>
+    <i></i>
+  </a>
+</section>
+
+<section class="section configure-section" id="product-details">
+  <div class="wrap configure-wrap">
+    <div class="configure-content reveal">
+      <h2 class="h-display" style="text-transform: uppercase;">Configure<br/>Your Legacy</h2>
+      <p class="lede">Customize your timepiece to reflect your unique identity.</p>
+      
+      <div class="config-panel">
+        <div class="config-group">
+          <span class="config-label">Case Material</span>
+          <div class="config-options color-options">
+             <button class="color-btn" style="background: #222;" aria-label="Dark"></button>
+             <button class="color-btn" style="background: #555;" aria-label="Grey"></button>
+             <button class="color-btn active" style="background: #e0e0e0;" aria-label="Silver"></button>
+          </div>
+        </div>
+        <div class="config-group">
+          <span class="config-label">Strap</span>
+          <div class="config-options strap-options">
+             <button class="strap-btn active">Steel Link</button>
+             <button class="strap-btn">Leather</button>
+             <button class="strap-btn">Rubber</button>
+          </div>
+        </div>
+        
+        <div class="add-to-cart-wrapper">
+          <div style="display: flex; gap: 16px; width: 100%;">
+            <button class="btn btn--white" style="flex: 1.5; padding: 12px; font-size: 9px; letter-spacing: 0.2em; font-weight: 500;"><span>ADD TO CART — € 28,900</span></button>
+            <a href="#product-details" class="btn btn--ghost" style="flex: 1; padding: 12px; font-size: 9px; letter-spacing: 0.2em; color: #fff; border-color: rgba(255, 255, 255, 0.25);"><span>MORE DETAILS</span></a>
+          </div>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.5); display: flex; gap: 10px; align-items: center; justify-content: center; margin-top: 24px;">
+            <span style="display:inline-block; width: 6px; height: 6px; border-radius: 50%; background: #4caf50;"></span>
+            In Stock. Ready to dispatch.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="configure-image reveal">
+      <img id="config-watch-img" src="images/Adobe Express - file (1).png" alt="Configure Watch" />
+    </div>
+  </div>
+</section>
+
+<section class="features-wrapper" style="margin-top: 80px; margin-bottom: 80px;">
+  <div class="feature-row reveal">
+    <div class="feature-row__media">
+      <img src="images/gallery-macro.png" alt="Exclusive Nato Strap" />
+    </div>
+    <div class="feature-row__content">
+      <span class="eyebrow" style="color: var(--accent);"><span class="dot"></span> SIGNATURE</span>
+      <h2 class="h-display" style="font-size: clamp(32px, 4vw, 48px); margin: 16px 0 24px; color: #111; text-align: left;">Exclusive Nato Strap.</h2>
+      <p>A striped design in brown, grey, and beige that includes a special buckle in grade 5 titanium, as well as unique signature engravings on the keepers ensuring unmatched comfort and aesthetic appeal.</p>
+    </div>
+  </div>
+  
+  <div class="feature-row reveal">
+    <div class="feature-row__media">
+      <img src="images/aqua-movement.png" alt="In-House Calibre" />
+    </div>
+    <div class="feature-row__content">
+      <span class="eyebrow" style="color: var(--accent);"><span class="dot"></span> PERFORMANCE</span>
+      <h2 class="h-display" style="font-size: clamp(32px, 4vw, 48px); margin: 16px 0 24px; color: #111; text-align: left;">In-House Calibre.</h2>
+      <p>At the heart of the timepiece beats an exceptionally precise movement, meticulously hand-finished to ensure unparalleled performance, anti-magnetic resistance, and longevity.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cinematic-sequence" id="cinematic-seq">
+  <div class="cinematic-panel showcase-1">
+    <img src="images/Gemini_Generated_Image_q6u6vtq6u6vtq6u6-clean.png" alt="Showcase" />
+  </div>
+  <div class="cinematic-panel showcase-2">
+    <img src="images/Gemini_Generated_Image_m7p2drm7p2drm7p2-clean.png" alt="Final Showcase" />
+  </div>
+</section>
+
+<section class="section collection-grid-section" id="collection">
+  <div class="wrap">
+    <div class="reveal" style="text-align: center; margin-bottom: 64px;">
+      <span class="eyebrow"><span class="dot"></span> THE COLLECTION</span>
+      <h2 class="h-display" style="margin-top: 16px;">Discover more.</h2>
+    </div>
+    <div class="collection-grid">
+      <!-- Card 1 -->
+      <div class="product-card reveal">
+        <div class="product-card__media">
+          <span class="product-card__badge">NEW</span>
+          <img src="images/Gemini_Generated_Image_2f0lz12f0lz12f0l-Photoroom.png" alt="Marine Bleu" loading="lazy" decoding="async" />
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__header">
+            <h4 class="product-card__title">Marine Bleu</h4>
+            <span class="product-card__price">€ 12,400</span>
+          </div>
+          <p class="product-card__desc">Sunburst blue dial, 41mm brushed steel, in-house Cal. N-77 automatic.</p>
+          <a href="#" class="btn btn--dark">ADD TO CART</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="product-card reveal">
+        <div class="product-card__media">
+          <span class="product-card__badge">ÉDITION</span>
+          <img src="images/Gemini_Generated_Image_m7p2drm7p2drm7p2-clean.png" alt="Squelette Rose" loading="lazy" decoding="async" />
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__header">
+            <h4 class="product-card__title">Squelette Rose</h4>
+            <span class="product-card__price">€ 28,900</span>
+          </div>
+          <p class="product-card__desc">Openworked rose-gold movement, alligator strap, hand-finished bridges.</p>
+          <a href="#" class="btn btn--dark">ADD TO CART</a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="product-card reveal">
+        <div class="product-card__media">
+          <img src="images/Gemini_Generated_Image_hvtztbhvtztbhvtz-Photoroom.png" alt="Or Fumé" loading="lazy" decoding="async" />
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__header">
+            <h4 class="product-card__title">Or Fumé</h4>
+            <span class="product-card__price">€ 18,600</span>
+          </div>
+          <p class="product-card__desc">18k yellow gold on integrated bracelet, smoked champagne dial.</p>
+          <a href="#" class="btn btn--dark">ADD TO CART</a>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="product-card reveal">
+        <div class="product-card__media">
+          <img src="images/Gemini_Generated_Image_5ukpyz5ukpyz5ukp-Photoroom.png" alt="Nuit Blanche" loading="lazy" decoding="async" />
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__header">
+            <h4 class="product-card__title">Nuit Blanche</h4>
+            <span class="product-card__price">€ 9,750</span>
+          </div>
+          <p class="product-card__desc">Slim 38mm dress piece, matte white lacquer dial, calfskin strap.</p>
+          <a href="#" class="btn btn--dark">ADD TO CART</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <a href="index.html" class="brand"><span class="brand__word">VELTRO</span></a>
+      <p class="muted">Manufacture horlogère indépendante.<br/>Rue du Rhône 62, 1204 Genève.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Youtube">Yt</a>
+        <a href="#" aria-label="X">X</a>
+        <a href="#" aria-label="LinkedIn">In</a>
+      </div>
+    </div>
+    <div>
+      <h5>Collection</h5>
+      <a href="#">Marine Bleu</a><a href="#">Squelette Rose</a><a href="#">Or Fumé</a><a href="#">Nuit Blanche</a>
+    </div>
+    <div>
+      <h5>Maison</h5>
+      <a href="#">The Atelier</a><a href="#">Straps</a><a href="#">Movements</a><a href="#">Journal</a>
+    </div>
+    <div>
+      <h5>Service</h5>
+      <a href="#">Concierge</a><a href="#">Warranty</a><a href="#">Book a viewing</a><a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="wrap foot__base">
+    <span>© 2026 VELTRO SA · Genève</span>
+    <span>Privacy · Terms · CHF</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Simple Configurator Interaction
+  const colorBtns = document.querySelectorAll('.color-btn');
+  const strapBtns = document.querySelectorAll('.strap-btn');
+  const configImg = document.getElementById('config-watch-img');
+
+  const strapImages = {
+    'Steel Link': 'images/Adobe Express - file (1).png',
+    'Leather': 'images/Gemini_Generated_Image_txyj1utxyj1utxyj-Photoroom.png',
+    'Rubber': 'images/Untitled - 03 July 2026 at 16.09.32.png'
+  };
+
+  colorBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      colorBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  strapBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      strapBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const strapName = btn.textContent.trim();
+      if (strapImages[strapName]) {
+        configImg.src = strapImages[strapName];
+      }
+    });
+  });
+</script>
+</body>
+</html>
