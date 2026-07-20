@@ -1,6 +1,6 @@
 <div align="center">
   <!-- Replace with your actual logo path -->
-  <img src="images/logo-placeholder.png" alt="Veltro Logo" width="150"/>
+  <img src="https://i.ibb.co/8DW206g8/Chat-GPT-Image-Jul-20-2026-05-59-08-PM.png" alt="Veltro Logo" width="150"/>
   
   # VELTRO — Swiss Luxury Timepieces
 
@@ -28,10 +28,9 @@
 
 ## 📸 Preview
 
-*(Add a high-quality screenshot or GIF of your website here)*
-
-> `![Veltro Website Preview](images/preview-placeholder.png)`
-
+https://i.ibb.co/jvQTkzvB/Screenshot-2026-07-20-175804.png
+https://i.ibb.co/chS00Ls5/Screenshot-2026-07-20-180040.png
+https://i.ibb.co/YF927p2b/Screenshot-2026-07-20-180100.png
 ---
 
 ## 📖 About
@@ -83,7 +82,7 @@ Scan the QR code below to view the live demo on your mobile device!
 
 <div align="center">
   <!-- Replace the src with your actual QR code image URL or path -->
-  <img src="images/qr-code-placeholder.png" alt="Scan to view on mobile" width="150" />
+  <img src="https://i.ibb.co/h1K63kW1/qrcode-376065061-dee6fc1bebe282f034c2d4515f979153.png" alt="Scan to view on mobile" width="150" />
   <p><i>(Replace this placeholder with your live deployment QR code)</i></p>
 </div>
 
